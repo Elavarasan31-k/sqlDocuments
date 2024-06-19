@@ -1,0 +1,222 @@
+19/10/2023
+
+         TOPIC:-
+                 WHERE CLAUSE
+
+
+QUESTIONS ON SELECTION ( WHERE CLAUSE )  :- 
+1.WAQTD THE ANNUAL SALARY OF THE EMPS  WHOSE NAME IS SMITH
+
+SELECT SAL*12 "ANNUAL SALARY"
+FROM EMP
+WHERE ENAME='SMITH';
+
+ANNUAL SALARY
+-------------
+         9600
+
+2.WAQTD NAME OF THE EMPS WORKING AS CLERK  
+
+SELECT ENAME
+FROM EMP
+WHERE JOB='CLERK';
+
+
+ENAME
+----------
+SMITH
+ADAMS
+JAMES
+MILLER
+
+3.WAQTD SALARY OF THE EMPS WHO ARE WORKING AS SALESMAN
+
+SELECT SAL SALARY
+FROM EMP
+WHERE JOB='SALESMAN';
+
+    SALARY
+----------
+      1600
+      1250
+      1250
+      1500
+
+4.WAQTD DETAILS OF THE EMPS WHO EARNS MORE THAN 2000
+
+SELECT *
+FROM EMP
+WHERE SAL>2000;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+
+6 rows selected.
+
+5.WAQTD DETAILS OF THE EMPS WHOS NAME IS JONES 
+
+SELECT *
+FROM EMP
+WHERE ENAME='JONES';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+
+
+6.WAQTD DETAILS OF THE EMPS WHO WAS HIRED AFTER 01-JAN-81 
+
+SELECT *
+FROM EMP
+WHERE HIREDATE<'01-JAN-81';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+
+7.WAQTD NAME AND SAL  ALONG WITH HIS ANNUAL SALARY IF THE ANNUAL
+  SALARY IS MORE THAN 12000 
+
+SELECT ENAME,SAL,SAL*12 "ANNUAL SALARY" 
+FROM EMP
+WHERE SAL*12>12000;
+
+
+ENAME             SAL ANNUAL SALARY
+---------- ---------- -------------
+ALLEN            1600         19200
+WARD             1250         15000
+JONES            2975         35700
+MARTIN           1250         15000
+BLAKE            2850         34200
+CLARK            2450         29400
+SCOTT            3000         36000
+KING             5000         60000
+TURNER           1500         18000
+ADAMS            1100         13200
+FORD             3000         36000
+MILLER           1300         15600
+
+12 rows selected.
+
+8.WAQTD EMPNO OF THE EMPS WHO ARE WORKING IN DEPT 30 
+
+SELECT EMPNO
+FROM EMP
+WHERE DEPTNO=30;
+
+     EMPNO
+----------
+      7499
+      7521
+      7654
+      7698
+      7844
+      7900
+
+6 rows selected.
+
+9.WAQTD ENAME AND HIREDATE IF THEY ARE HIRED BEFORE 1981
+
+SELECT ENAME,HIREDATE
+FROM EMP
+WHERE HIREDATE <'01-JAN-1981';
+
+
+ENAME      HIREDATE
+---------- ---------
+SMITH      17-DEC-80
+
+10.WAQTD DETAILS OF THE EMPS WORKING AS MANAGER
+
+SELECT *
+FROM EMP
+WHERE JOB='MANAGER';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+
+11.WAQTD NAME AND SALARY GIVEN TO AN EMPS IF EMPLOYEE EARNS 
+A COMMISSION OF RUPEES 1400 
+
+SELECT ENAME, SAL SALARY
+FROM EMP
+WHERE COMM=1400;
+
+
+ENAME          SALARY
+---------- ----------
+MARTIN           1250
+
+12.WAQTD DETAILS OF EMPS HAVING COMMISSION MORE THAN SALARY 
+
+SELECT *
+FROM EMP
+WHERE COMM > SAL;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+
+13.WAQTD EMPNO OF EMPS HIRED BEFORE THE YEAR 87
+
+SELECT EMPNO
+FROM EMP
+WHERE HIREDATE < '01-JAN-87';
+
+
+     EMPNO
+----------
+      7369
+      7499
+      7521
+      7566
+      7654
+      7698
+      7782
+      7839
+      7844
+      7900
+      7902
+      7934
+
+12 rows selected.
+
+14.WAQTD DETAILS OF EMPS WORKING AS AN 'ANALYST' 
+
+SELECT *
+FROM EMP
+WHERE JOB='ANALYST';
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+
+15.WAQTD DETAILS OF EMPS EARNING MORE THAN 2000 RUPEES PER MONTH
+
+SELECT *
+FROM EMP
+WHERE SAL>2000;
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+
+6 rows selected.
